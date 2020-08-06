@@ -47,7 +47,7 @@ spec:
           command:
             - sh
             - -c
-            - "/usr/local/bin/etcd $(cat $ETCD_INIT_ARGSFILE)"
+            - "/usr/bin/etcd $(cat $ETCD_INIT_ARGSFILE)"
           env:
             - name: ETCD_INIT_ARGSFILE
               value: {{ contiv_etcd_conf_dir }}/contiv-etcd-args

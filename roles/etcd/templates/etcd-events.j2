@@ -17,5 +17,5 @@
   {% endif %}
   --name={{ etcd_member_name }}-events \
   {{ etcd_image_repo }}:{{ etcd_image_tag }} \
-  /usr/local/bin/etcd \
+  /usr/bin/etcd \
   "$@"

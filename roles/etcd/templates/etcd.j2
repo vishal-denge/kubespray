@@ -20,5 +20,5 @@
 {% if etcd_ionice is defined %}
   /bin/ionice {{ etcd_ionice }} \
 {% endif %}
-  /usr/local/bin/etcd \
+  /usr/bin/etcd \
   "$@"

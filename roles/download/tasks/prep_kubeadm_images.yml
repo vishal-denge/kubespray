@@ -13,16 +13,14 @@
     dest: "{{ kube_config_dir }}/kubeadm-images.yaml"
   when:
     - not skip_kubeadm_images|default(false)
+- name: testt
+  command: cp /tmp/releases/kubeadm-v1.16.0-amd64 /usr/bin/kubeadm
 
-- name: prep_kubeadm_images | Copy kubeadm binary from download dir to system path
-  synchronize:
-    src: "{{ local_release_dir }}/kubeadm-{{ kubeadm_version }}-{{ image_arch }}"
-    dest: "{{ bin_dir }}/kubeadm"
-    compress: no
-    perms: yes
-    owner: no
-    group: no
-  delegate_to: "{{ inventory_hostname }}"
+#- name: prep_kubeadm_images | Copy kubeadm binary from download dir to system path
+#  synchronize:
+#    src: "/tmp/releases/kubeadm-v1.16.0-amd64"
+#    dest: "/usr/bin/kubeadm"
+#  delegate_to: "{{ inventory_hostname }}"
 
 - name: prep_kubeadm_images | Set kubeadm binary permissions
   file:

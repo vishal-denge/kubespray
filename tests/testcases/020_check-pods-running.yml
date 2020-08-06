@@ -9,7 +9,7 @@
 
   - name: Force binaries directory for other hosts
     set_fact:
-      bin_dir: "/usr/local/bin"
+      bin_dir: "/usr/bin"
     when: not ansible_os_family in ["CoreOS", "Coreos", "Container Linux by CoreOS", "Flatcar", "Flatcar Container Linux by Kinvolk"]
 
   - import_role:
